@@ -1,6 +1,3 @@
-%
-% file logistf/sex2.Rd
-%
 \name{sex2}
 \alias{sex2}
 \title{Condom use and first time urinary tract infection
@@ -18,9 +15,9 @@ use (vicl), spermicide use (vis) and diaphragm used (dia).
 
 \format{A data frame table.}
 
-\source{
+\references{
 Foxman B, Marsh J, Gillespie B, Rubin N, Koopman JS, Spear S (1997).
-  Condom Use and First-Time Urinary Tract Infection. \emph{Epidemiology} 
+  Condom Use and First-Time Urinary Tract Infection. \emph{Epidemiology}
   8: 637--641.
 }
 
