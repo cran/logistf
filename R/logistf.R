@@ -72,7 +72,7 @@ function(formula = attr(data, "formula"), data = sys.parent(), pl = TRUE, alpha 
 
 	fit <- list(coefficients = beta, alpha = alpha, var = covs, df = (k-int), loglik = 
 		logistftest(formula, data, test=coltotest)$loglik, iter = iter, n = n, terms = 
-		colnames(x), y = y, formula = formula.default(formula), call=match.call())
+		colnames(x), y = y, formula = formula(formula), call=match.call())
 	fit$linear.predictors <- as.vector(x %*% beta)
 	if(firth)
 		fit$method <- "Penalized ML"

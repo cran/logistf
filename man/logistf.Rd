@@ -10,7 +10,7 @@ Implements Firth's penalized-likelihood logistic regression
 \usage{
 logistf(formula=attr(data, "formula"), data=sys.parent(),
   pl = TRUE, alpha = 0.05, maxit = 25, maxhs=5, epsilon = .0001,
-  maxstep = 10, firth=TRUE, \beta0)
+  maxstep = 10, firth=TRUE, beta0)
 
 }
 
@@ -72,7 +72,7 @@ application of Firth's modified score procedure in logistic regression
 analysis. It was written on a PC with S-PLUS 4.0 but runs on \R, newer
 versions of S as well as with other operation systems like UNIX. The
 library is available at the web-site
-\url{http://www.akh-wien.ac.at/imc/biometrie/fl}.
+\url{http://www.akh-wien.ac.at/imc/biometrie/programme/fl/index.html}.
 
 The call of the main function of the library follows the structure of
 the standard functions as lm or glm, requiring a data.frame and a
@@ -87,7 +87,7 @@ function to plot profiles of the penalized likelihood function and a
 function to perform penalized likelihood ratio tests have been included.
 
 In explaining the details of the estimation process we follow mainly the
-description in Heinze & Ploner (2001). In general, maximum likelihood
+description in Heinze & Ploner (2003). In general, maximum likelihood
 estimates are often prone to small sample bias. To reduce this bias,
 Firth (1993) suggested to maximize the penalized log likelihood \eqn{log
 L(\beta)^* = log L(\beta) + 0.5log |I(\beta)|}, where \eqn{I(\beta)} is the
@@ -95,7 +95,7 @@ Fisher information matrix, i. e. minus the second derivative of the log
 likelihood. Applying this idea to logistic regression, the score
 function \eqn{U(\beta)} is replaced by the modified score function
 \eqn{U(\beta)^* = U(\beta) + a}, where \eqn{a} has \eqn{r}th entry 
-\eqn{a_r = 0.5tr{I(\beta)_{-1} [I()/r]}, r = 1,...,k}.  
+\eqn{a_r = 0.5tr{I(\beta)_{-1} [dI(\beta)/d\beta_r]}, r = 1,...,k}.  
 Heinze and Schemper (2001) give the explicit formulae for \eqn{I(\beta)}
 and \eqn{I(\beta)/\beta_r}.
 
@@ -167,13 +167,19 @@ Heinze G (1999). Technical Report 10: The application of Firth's procedure to Co
   and logistic regression. Department of Medical Computer Sciences, Section of Clinical
   Biometrics, Vienna University, Vienna.
 
-Heinze G, Ploner M (2001). SAS and SPLUS programs to perform Cox regression
-  without convergence problems. \emph{Computer methods and programs in Biomedicine}, to
-  appear.
+Heinze G, Schemper M (2002). A solution to the problem of 
+  separation in logistic regression. \emph{Statistics in Medicine} 21: 2409-2419.
 
-Heinze G, Schemper M (2001). A solution to the problem of monotone likelihood
-  in logistic regression. submitted.
+Heinze G, Ploner M (2003). Fixing the nonconvergence bug in 
+logistic regression with SPLUS and SAS. \emph{Computer Methods and 
+Programs in Biomedicine} 71: 181-187.
 
+Ploner, M. (2001). Technical Report 2/2001: An SPLUS library to perform
+  logistic regression without convergence problems. Section of Clinical Biometrics, Department of
+  Medical Computer Sciences, University of Vienna, Vienna.
+
+Venzon DJ, Moolgavkar AH (1988). A method for computing profile-likelihood
+  based confidence intervals. \emph{Applied Statistics} 37:87-94.
 }
 \examples{
 data(sex2)

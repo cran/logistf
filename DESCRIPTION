@@ -1,14 +1,14 @@
 Package: logistf
-Version: 1.00
-Date: 2003-10-20
+Version: 1.01
+Date: 2004-04-22
 Title: Firth's bias reduced logistic regression
-Author: Meinhard Ploner <meinhard.ploner@akh-wien.ac.at>, Daniela Dunkler, i
-        Harry Southworth, Georg Heinze
+Author: Meinhard Ploner, Daniela Dunkler, 
+        Harry Southworth, Georg Heinze <georg.heinze@meduniwien.ac.at> 
 Maintainer: David Duffy <davidD@qimr.edu.au>
 Depends: R (>= 0.99)
 Description: Firth's bias reduced logistic regression approach with
         penalized profile likelihood based confidence intervals for 
         parameter estimates.
 License: GPL
-URL: http://www.akh-wien.ac.at/imc/biometrie/fl
+URL: http://www.akh-wien.ac.at/imc/biometrie/programme/fl/index.html
 

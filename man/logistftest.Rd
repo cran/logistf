@@ -75,13 +75,16 @@ Heinze G (1999). Technical Report 10: The application of Firth's procedure to Co
   and logistic regression. Department of Medical Computer Sciences, Section of Clinical
   Biometrics, Vienna University, Vienna.
 
-Heinze G, Ploner M (2001). SAS and SPLUS programs to perform Cox regression
-  without convergence problems. \emph{Computer methods and programs in Biomedicine}, to
-  appear.
+Heinze G, Schemper M (2002). A solution to the problem of 
+  separation in logistic regression. \emph{Statistics in Medicine} 21: 2409-2419.
 
-Heinze G, Schemper M (2001). A solution to the problem of monotone likelihood
-  in logistic regression. submitted.
+Heinze G, Ploner M (2003). Fixing the nonconvergence bug in 
+logistic regression with SPLUS and SAS. \emph{Computer Methods and 
+Programs in Biomedicine} 71: 181-187.
 
+Ploner, M. (2001). Technical Report 2/2001: An SPLUS library to perform
+  logistic regression without convergence problems. Section of Clinical Biometrics, Department of
+  Medical Computer Sciences, University of Vienna, Vienna.
 }
 \seealso{logistf, logistfplot}
 

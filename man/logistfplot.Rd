@@ -72,8 +72,8 @@ Heinze G (1999). Technical Report 10: The application of Firth's procedure to Co
   and logistic regression. Department of Medical Computer Sciences, Section of Clinical
   Biometrics, Vienna University, Vienna.
 
-Heinze G, Schemper M (2001). A solution to the problem of monotone likelihood
-  in logistic regression. submitted.
+Heinze G, Schemper M (2002). A solution to the problem of 
+  separation in logistic regression. \emph{Statistics in Medicine} 21: 2409-2419.
 
 }
 \seealso{logistf, logistftest}
