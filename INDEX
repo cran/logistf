@@ -1,0 +1,5 @@
+logistfplot             Plot penalized profile likelihood
+logistf                 Bias-reduced logistic regression
+logistftest             Bias-reduced logistic regression
+sex2                    Condom use and first time urinary tract
+                        infection
