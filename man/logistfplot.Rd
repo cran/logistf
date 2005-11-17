@@ -6,7 +6,7 @@ This function plots the penalized profile likelihood for a specified
 parameter.
 }
 \usage{
-logistfplot <- function(formula = attr(data, "formula"),
+logistfplot(formula = attr(data, "formula"),
     data = sys.parent(), which, pitch = 0.05, limits, alpha = 0.05,
     maxit = 25, maxhs = 5, epsilon = 0.0001, maxstep = 10, firth = TRUE, legends = TRUE)
 }
@@ -43,7 +43,6 @@ logistfplot <- function(formula = attr(data, "formula"),
     that by specifying \code{pl=TRUE} and \code{firth=FALSE} (and probably a lower number of iterations)
   one obtains profile likelihood confidence intervals for maximum likelihood logistic
   regression parameters.}
-  \item{beta0}{specifies the initial values of the coefficients for the fitting algorithm.}
   \item{legends}{if \code{FALSE}, legends in the plot would be omitted
     (default is \code{TRUE}).}
 }

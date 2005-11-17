@@ -497,4 +497,4 @@ logistpl <- function(x, y, beta, i, LL.0, maxit, maxhs, epsilon,
 }
 
 .First.lib <- function(...)
-    cat("LOGISTF library by Meinhard Ploner,\n                   Daniela Dunkler*,\n                   Harry Southworth,\n                   Georg Heinze*,\n *Medical University of Vienna\nVersion 1.03 (Build 2005.03.30)\nfor comments mailto:georg.heinze@meduniwien.ac.at\n")
+    cat("LOGISTF library by Meinhard Ploner,\n                   Daniela Dunkler*,\n                   Harry Southworth,\n                   Georg Heinze*,\n *Medical University of Vienna\nVersion 1.05 (Build 2005.11.17)\nfor comments mailto:georg.heinze@meduniwien.ac.at\n")
