@@ -46,7 +46,7 @@ logistftest(formula=attr(data, "formula"), data=sys.parent(),
     regression parameters.}
   \item{beta0}{specifies the initial values of the coefficients for the fitting algorithm.}
 }
-\values{
+\value{
 The object returned is of the class logistf and has the following attributes:
   \item{testcov}{a vector of the fixed values of each covariate; NA stands for a parameter
     which is not tested.}

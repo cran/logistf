@@ -46,7 +46,7 @@ logistfplot(formula = attr(data, "formula"),
   \item{legends}{if \code{FALSE}, legends in the plot would be omitted
     (default is \code{TRUE}).}
 }
-\values{
+\value{
 The object returned is a simple data.frame containing three columns which
 allow reproducing the plot. Each row represents one point of the interpolation. The
 columns are as follows:

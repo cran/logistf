@@ -39,7 +39,7 @@ logistf(formula=attr(data, "formula"), data=sys.parent(),
   regression parameters.}
   \item{beta0}{specifies the initial values of the coefficients for the fitting algorithm.}
 }
-\values{ 
+\value{ 
   The object returned is of the class logistf and has the following attributes:
   \item{coefficients}{ the coefficients of the parameter in the fitted model.}
   \item{alpha}{ the significance level (1- the confidence level) as specified in the input.}
