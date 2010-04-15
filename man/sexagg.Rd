@@ -1,5 +1,5 @@
-\name{sex2}
-\alias{sex2}
+\name{sexagg}
+\alias{sexagg}
 \docType{data}
 \title{Condom use and first time urinary tract infection
 }
@@ -12,7 +12,7 @@ uninfected controls. The data set include the binary covariates age
 use (vicl), spermicide use (vis) and diaphragm used (dia).
 }
 
-\usage{data(sex2)}
+\usage{data(sexagg)}
 
 \format{A data frame table.}
 
@@ -23,7 +23,7 @@ Foxman B, Marsh J, Gillespie B, Rubin N, Koopman JS, Spear S (1997).
 }
 
 \examples{
-data(sex2)
+data(sexagg)
 }
 
 \keyword{datasets}

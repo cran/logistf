@@ -1,0 +1,9 @@
+#### export of public functions:
+
+export(logistf, logistf.control, logistftest, logistfplot, logistpl.control)
+
+#### definition of S3 methods:
+S3method(print, logistf)
+S3method(summary, logistf)
+S3method(print, logistftest)
+

@@ -6,11 +6,10 @@ This function plots the penalized profile likelihood for a specified
 parameter.
 }
 \usage{
-logistfplot(formula = attr(data, "formula"),
-    data = sys.parent(), which, pitch = 0.05, limits, alpha = 0.05,
-    maxit = 25, maxhs = 5, epsilon = 0.0001, maxstep = 10, firth = TRUE, legends = TRUE)
+logistfplot(formula = attr(data, "formula"), data = sys.parent(), which, pitch = 0.05, limits,
+                    alpha = 0.05,  firth = TRUE,
+                    legends = TRUE, weights, control, plcontrol)
 }
-
 \arguments{
   \item{formula}{a formula object, with the response on the left of the  operator, and the
     model terms on the right. The response must be a vector with 0 and 1 or FALSE and
@@ -32,12 +31,6 @@ logistfplot(formula = attr(data, "formula"),
     standard deviation of the parameter, respectively.}
   \item{alpha}{the significance level (1-\eqn{\alpha} the confidence level,
     0.05 as default).}
-  \item{maxit}{maximum number of iterations (default value is 25)}
-  \item{maxhs}{maximum number of step-halvings per iterations (default value is 5)}
-  \item{epsilon}{specifies the maximum allowed change in penalized log likelihood to
-    declare convergence. Default value is 0.0001.}
-  \item{maxstep}{specifies the maximum change of (standardized) parameter values allowed
-    in one iteration. Default value is 5.}
   \item{firth}{use of Firth's (1993) penalized maximum likelihood (\code{firth=TRUE}, the default) or the
     standard maximum likelihood method (\code{firth=FALSE}) for the logistic regression. Note
     that by specifying \code{pl=TRUE} and \code{firth=FALSE} (and probably a lower number of iterations)
@@ -45,6 +38,9 @@ logistfplot(formula = attr(data, "formula"),
   regression parameters.}
   \item{legends}{if \code{FALSE}, legends in the plot would be omitted
     (default is \code{TRUE}).}
+  \item{weights}{case weights.}
+  \item{control}{a logistf.control object to define parameters for the Newton-Raphson iteration.}
+  \item{plcontrol}{a logistpl.control object to define parameters for the Newton-Raphson iteration to estimate profile likelihood CLs.}
 }
 \value{
 The object returned is a simple data.frame containing three columns which
@@ -63,7 +59,6 @@ log likelihood (PPL) function allows use of Wald intervals, while an
 asymmetric shape demands profile penalized likelihood intervals (Heinze
 & Schemper (2002)). Further documentation can be found in Heinze & Ploner (2004).
 }
-
 \references{
 Firth D (1993). Bias reduction of maximum likelihood estimates. \emph{Biometrika}
   80, 27--38.
@@ -76,8 +71,14 @@ Heinze G, Ploner M (2004). Technical Report 2/2004: A SAS-macro, S-PLUS library 
   Section of Clinical Biometrics, Department of
   Medical Computer Sciences, Medical University of Vienna, Vienna, Austria.
  \url{http://www.meduniwien.ac.at/user/georg.heinze/techreps/tr2_2004.pdf}
+
+Heinze G (2006). A comparative investigation of methods for logistic regression
+with separated or nearly separated data. \emph{Statistics in Medicine} 25: 4216-4226.
 }
 \seealso{logistf, logistftest}
-
+\examples{
+data(sexagg)
+logistfplot(formula = case ~ age + oc + vic + vicl + vis + dia, data = sexagg, weights = COUNT,which=~dia-1)
+}
 \keyword{regression}
 \keyword{models}
