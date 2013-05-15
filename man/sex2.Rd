@@ -1,29 +1,21 @@
 \name{sex2}
-\alias{sex2}
-\docType{data}
-\title{Condom use and first time urinary tract infection
-}
-\description{
-The case-control study of Foxman et al (1997) examines urinary tract
-infection in related to age and contraceptive use.  The data set
-consists of 130 college women with urinary tract infections and 109
-uninfected controls. The data set include the binary covariates age
-(age), oral contraceptive use (oc), condom use (vic), lubricated condom
-use (vicl), spermicide use (vis) and diaphragm used (dia).
-}
-
-\usage{data(sex2)}
-
-\format{A data frame table.}
-
-\references{
-Foxman B, Marsh J, Gillespie B, Rubin N, Koopman JS, Spear S (1997).
-  Condom Use and First-Time Urinary Tract Infection. \emph{Epidemiology}
-  8: 637--641.
-}
-
-\examples{
-data(sex2)
-}
-
-\keyword{datasets}
+     \docType{data}
+     \alias{sexagg}
+     \alias{sex2}
+     \title{Urinary tract infection in American college students}
+     \description{
+       This data set deals with urinary tract infection in sexually active college women, along with covariate
+       information on age an contraceptive use.
+       The variables are all binary and coded in 1 (condition is present) and 0 (condition is absent): case (urinary tract infection, the study outcome variable),
+       age (>= 24 years), dia (use of diaphragm), oc (use of oral contraceptive), vic (use of condom),
+      vicl (use of lubricated condom), and vis (use of spermicide).
+     }
+     \usage{
+     sex2
+     sexagg}
+     \format{\code{sex2}: a \code{data.frame} containing 239 observations; \code{sexagg}: an aggregated \code{data.frame} containing 31 observations with case weights (\code{COUNT}).}
+     \source{www.cytel.com, the full data was available for download at their webpage, and is distributed along with their LogXact software. Here a reduced version of the original data is reproduced.}
+     \references{
+       Cytel Inc., (2010) \emph{LogXact 9 user manual}, Cambridge, MA:Cytel Inc.
+     }
+     \keyword{datasets}

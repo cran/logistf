@@ -1,8 +1,0 @@
-logistf                 Bias-reduced logistic regression
-logistfplot             Plot penalized profile likelihood
-logistftest             Penalized likelihood ratio test
-logistf.control         control parameters for logistf
-logistpl.control        control parameters for estimation of profile likelihood confidence intervals
-sex2                    Condom use and first time urinary tract
-                        infection
-sexagg                  the same data set, but aggregated
