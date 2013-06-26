@@ -1,4 +1,4 @@
-b8623a7ba1ee484eadc8eccdab6cca04 *DESCRIPTION
+c38d2b674a56180865995a92953de266 *DESCRIPTION
 1e2796304c187e41a9ed76fc0d16c903 *NAMESPACE
 75bc854976234886d700d6c33b097812 *R/CLIP.confint.r
 a5c41da46f1cf5a505776a3b5080c901 *R/CLIP.profile.r
@@ -8,8 +8,8 @@ a5c41da46f1cf5a505776a3b5080c901 *R/CLIP.profile.r
 bedb14114eb968d8a97aa63870860406 *R/extractAIC.logistf.r
 9fd965b2fb0983eaf8a02a046f2539b7 *R/inverseLinpack.R
 1d5514c93c6cd224ae705135f13be386 *R/logistf.R
-91ef0077c53099e35dbd634fa5faa777 *R/logistf.control.R
-72cb8e35df7043433d32adffbdb97788 *R/logistf.fit.R
+df501b46d1d1755d2b907f04bdc16e18 *R/logistf.control.R
+153f28736277d839a7fe4da310a0778a *R/logistf.fit.R
 8e2862683b375a162dba4234eae78b33 *R/logistf.fit.old.R
 649bc0fac3b01060ce4b6c718afbcce4 *R/logistf.pdf.R
 791d10697b396e927922ceaa2178239d *R/logistftest.R

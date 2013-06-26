@@ -7,17 +7,18 @@ collapse<-control$collapse
 coll<-FALSE
 
 if(collapse & length(unique(weight))==1 & weight[1]==1) {
-  if(length(unique(unlist(sapply(1:ncol(cbind(x,y)), function(X) unique(cbind(x,y)[,X]))))) > 10) break
-  require(mgcv)
-  xc<-uniquecombs(cbind(x,y,offset))
-  xorig<-x
-  yorig<-y
-  weight<-table(attr(xc,"index"))
-  x<-xc[,1:k]
-  y<-xc[,k+1]
-  if(!is.null(offset)) offset<-xc[,k+2]
-  n<-nrow(xc)
-  coll<-TRUE
+  if(length(unique(unlist(sapply(1:ncol(cbind(x,y)), function(X) unique(cbind(x,y)[,X]))))) <= 10) {
+      require(mgcv)
+      xc<-uniquecombs(cbind(x,y,offset))
+      xorig<-x
+      yorig<-y
+      weight<-table(attr(xc,"index"))
+      x<-xc[,1:k]
+      y<-xc[,k+1]
+      if(!is.null(offset)) offset<-xc[,k+2]
+      n<-nrow(xc)
+      coll<-TRUE
+    }
   }
 
 if (is.null(init)) init=rep(0,k)
