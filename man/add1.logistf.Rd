@@ -3,7 +3,7 @@
 \alias{drop1.logistf}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Add or Drop All Possible Single Terms to a logistf Model
+Add or Drop All Possible Single Terms to/from a \code{logistf} Model
 }
 \description{
 Compute all the single terms in the scope argument that can be added to or dropped from the model, fit those models and compute a table of the changes in fit.

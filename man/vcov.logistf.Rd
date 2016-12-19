@@ -2,20 +2,20 @@
 \Rdversion{1.1}
 \alias{vcov.logistf}
 \title{
-\code{vcov} method for \code{logistf} objects
+\code{vcov} Method for \code{logistf} Objects
 }
 \description{
-provides the \code{vcov} method for \code{logistf} objects
+Provides the \code{vcov} method for \code{logistf} objects.
 }
 \usage{
 \method{vcov}{logistf}(object, ...)
 }
 \arguments{
-  \item{object}{a logistf object}
+  \item{object}{a \code{logistf}  object}
   \item{...}{further arguments}
 }
 \value{
-the variance-covariance matrix of a logistf fit
+the variance-covariance matrix of a \code{logistf} fit
 }
 \author{Georg Heinze}
 \seealso{

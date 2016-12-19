@@ -2,7 +2,7 @@
 \Rdversion{1.1}
 \alias{print.logistf}
 \title{
-print method for logistf objects
+\code{print} Method for \code{logistf} Objects
 }
 \description{
 provides the print method for logistf objects}

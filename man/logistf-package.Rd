@@ -3,11 +3,13 @@
 \alias{logistf-package}
 \docType{package}
 \title{
-An R package for Firth-type bias-reduced logistic regression
+Firth's Bias-Reduced Logistic Regression
 }
 \description{
-Implements Firth's penalized likelihood logistic regression
-}
+Fit a logistic regression model using Firth's bias reduction method, equivalent to penalization of the log-likelihood by the Jeffreys prior. 
+Confidence intervals for regression coefficients can be computed by penalized profile likelihood. Firth's method was proposed as ideal 
+solution to the problem of separation in logistic regression. If needed, the bias reduction can be turned off such that ordinary 
+maximum likelihood logistic regression is obtained.}
 \details{
 \tabular{ll}{
 Package: \tab logistf\cr

@@ -1,11 +1,9 @@
 \name{print.logistftest}
 \Rdversion{1.1}
 \alias{print.logistftest}
-\title{print method for logistftest objects
-%%  ~~function to do ... ~~
-}
+\title{\code{print} method for \code{logistftest} objects}
 \description{
-provides the print method for logistftest objects}
+Provides the print method for \code{logistftest} objects.}
 \usage{
 \method{print}{logistftest}(x, ...)
 }

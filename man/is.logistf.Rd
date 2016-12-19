@@ -2,7 +2,7 @@
 \alias{is.logistf}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-logistf objects
+Check \code{logistf} Objects
 }
 \description{
 Checks if an object is of class \code{logistf}

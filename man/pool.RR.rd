@@ -1,7 +1,7 @@
 \name{pool.RR}
 \Rdversion{1.1}
 \alias{pool.RR}
-\title{Compute pooled normal confidence intervals (following Rubin`s rules) after multiple imputation}
+\title{Compute Pooled Normal Confidence Intervals (following Rubin`s Rules) after Multiple Imputation}
 \description{Computes pooled normal (symmetric) confidence intervals after multiple imputation, following Rubin`s rules.}
 \usage{pool.RR(object, method = "plain")}
 \arguments{

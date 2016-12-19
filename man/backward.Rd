@@ -3,7 +3,7 @@
 \alias{forward}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Backward elimination of model terms in logistf models
+Backward Elimination of Model Terms in \code{logistf} Models
 }
 \description{
 These functions provide simple backward elimination/forward selection procedures for logistf models

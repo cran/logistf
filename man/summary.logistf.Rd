@@ -2,10 +2,10 @@
 \Rdversion{1.1}
 \alias{summary.logistf}
 \title{
-\code{summary} method for logistf objects
+\code{summary} Method for \code{logistf} Objects
 }
 \description{
-provides a summary method for logistf objects
+Provides a summary method for \code{logistf}  objects.
 }
 \usage{
 \method{summary}{logistf}(object, ...)

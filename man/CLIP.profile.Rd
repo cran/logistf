@@ -2,7 +2,7 @@
 \alias{CLIP.profile}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Combine profile likelihoods from imputed-data model fits
+Combine Profile Likelihoods from Imputed-Data Model Fits
 }
 \description{
 This function uses CLIP (combination of likelihood profiles) to compute the pooled profile of the posterior after multiple imputation.

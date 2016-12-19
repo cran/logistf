@@ -2,7 +2,7 @@
 \alias{CLIP.confint}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Confidence intervals after multiple imputation: Combination of Likelihood Profiles
+Confidence Intervals after Multiple Imputation: Combination of Likelihood Profiles
 }
 \description{
 This function implements the new combination of likelihood profiles (CLIP) method described in Heinze, Ploner and Beyea (2013). This method is useful for computing confidence intervals for parameters after multiple imputation of data sets,

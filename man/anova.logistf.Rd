@@ -2,7 +2,7 @@
 \alias{anova.logistf}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Analysis of penalized deviance for logistf models
+Analysis of Penalized Deviance for \code{logistf} Models
 }
 \description{
 This method compares hierarchical and non-hierarchical logistf models using penalized likelhood ratio tests. It replaces the function logistftest of former versions of logistf.

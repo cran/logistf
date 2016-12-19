@@ -1,7 +1,7 @@
 \name{logistpl.control}
 \Rdversion{1.1}
 \alias{logistpl.control}
-\title{Control parameters for logistf profile likelihood confidence interval estimation}
+\title{Control Parameters for logistf Profile Likelihood Confidence Interval Estimation}
 \description{
 Sets parameters for modified Newton-Raphson iteration for finding profile likelihood confidence intervals
 in Firth's penalized likelihood logistic regression

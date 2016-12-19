@@ -2,7 +2,7 @@
 \alias{plot.logistf.profile}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-plot method for \code{logistf} likelihood profiles
+\code{plot} Method for \code{logistf} Likelihood Profiles
 }
 \description{
 provides the plot method for objects created by \code{\link{profile.logistf}} or \code{\link{CLIP.profile}}

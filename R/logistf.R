@@ -50,7 +50,7 @@ function(formula = attr(data, "formula"), data = sys.parent(), pl = TRUE, alpha 
     fit$firth<-firth
     fit$linear.predictors <- as.vector(x %*% beta + offset)
     fit$predict <- fit.full$pi
-    fit$hat.diag <- fit.full$hat.diag
+    fit$hat.diag <- fit.full$Hdiag
     if(firth)
         fit$method <- "Penalized ML"
     else fit$method <- "Standard ML"

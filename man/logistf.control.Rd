@@ -1,7 +1,7 @@
 \name{logistf.control}
 \Rdversion{1.1}
 \alias{logistf.control}
-\title{Control parameters for logistf}
+\title{Control Parameters for \code{logistf}}
 \description{
 Sets parameters for Newton-Raphson iteration in Firth's penalized-likelihood logistic regression
 }

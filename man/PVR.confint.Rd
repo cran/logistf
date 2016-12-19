@@ -2,7 +2,7 @@
 \alias{PVR.confint}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Pseudo-variance modification of Rubin`s rules 
+Pseudo-Variance Modification of Rubin`s Rules 
 }
 \description{
 The pseudo-variance modification proposed by Heinze, Ploner and Beyea (2013) provides a quick way to adapt Rubin`s rules to situations of a non-normal distribution

@@ -2,10 +2,10 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \alias{logistf}
 \title{
-Bias-reduced logistic regression
+Firth's Bias-Reduced Logistic Regression
 }
 \description{
-Implements Firth's penalized-likelihood logistic regression 
+Implements Firth's bias-Reduced penalized-likelihood logistic regression.
 }
 \usage{
 logistf(formula = attr(data, "formula"), data = sys.parent(), pl = TRUE, 

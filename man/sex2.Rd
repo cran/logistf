@@ -2,7 +2,7 @@
      \docType{data}
      \alias{sexagg}
      \alias{sex2}
-     \title{Urinary tract infection in American college students}
+     \title{Urinary Tract Infection in American College Students}
      \description{
        This data set deals with urinary tract infection in sexually active college women, along with covariate
        information on age an contraceptive use.

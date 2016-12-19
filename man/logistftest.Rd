@@ -1,7 +1,7 @@
 \name{logistftest}
 \Rdversion{1.1}
 \alias{logistftest}
-\title{Penalized likelihood ratio test}
+\title{Penalized Likelihood Ratio Test}
 \description{
 This function performs a penalized likelihood ratio test on some (or
 all) selected factors.  The resulting object is of the class logistftest

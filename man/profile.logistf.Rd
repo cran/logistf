@@ -3,7 +3,7 @@
 \alias{plot.profile.logistf}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Profile penalized likelihood
+Compute Profile Penalized Likelihood
 }
 \description{
 Evaluates the profile penalized likelihood of a variable based on a logistf model fit.
