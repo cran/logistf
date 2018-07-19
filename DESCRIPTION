@@ -1,6 +1,6 @@
 Package: logistf
-Version: 1.22
-Date: 2016-12-19
+Version: 1.23
+Date: 2018-07-19
 Title: Firth's Bias-Reduced Logistic Regression
 Authors@R: c(person("Georg", "Heinze", role=c("aut", "cre"), email="georg.heinze@meduniwien.ac.at"),
 			 person("Meinhard", "Ploner", role=c("aut")),
@@ -17,11 +17,11 @@ URL:
         http://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/fllogistf/
 LazyLoad: yes
 NeedsCompilation: yes
-Packaged: 2016-12-19 15:27:22 UTC; Biometrikus
+Packaged: 2018-07-19 15:57:04 UTC; Biometrikus
 Author: Georg Heinze [aut, cre],
   Meinhard Ploner [aut],
   Daniela Dunkler [ctb],
   Harry Southworth [ctb]
 Maintainer: Georg Heinze <georg.heinze@meduniwien.ac.at>
 Repository: CRAN
-Date/Publication: 2016-12-19 17:15:26
+Date/Publication: 2018-07-19 17:40:10 UTC

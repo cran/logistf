@@ -20,7 +20,6 @@ logistpl.control,
 CLIP.confint, 
 CLIP.profile, 
 PVR.confint, 
-pool.RR, 
 is.logistf, 
 backward, 
 forward)

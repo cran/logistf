@@ -1,5 +1,5 @@
-28fac65e65da05e081025eeaeeeb00dc *DESCRIPTION
-af9c106aad3ca0c1bd741d2a21a2940d *NAMESPACE
+cc605bdb8e1e30785a2add0de01a68af *DESCRIPTION
+9f674e9f6330dcc0db081c14619067b3 *NAMESPACE
 b496de013aba65db5389cc452aee3fa8 *R/CLIP.confint.r
 05cc407443db6a0201979aff2a4e11e3 *R/CLIP.profile.r
 149c67697d71f0cad424bd89c83e1ed5 *R/PVR.confint.r
@@ -17,7 +17,6 @@ b36bdab8ee662999a3208167f2567a02 *R/logistpl.R
 dcc73ef3e364035e6459c5e7180cd5e3 *R/logistpl.control.r
 1b8808442c088d9bb1114c38801961c9 *R/logistpl.old.R
 b25f2f785b9a39b18dbd5e3c924c07bc *R/plot.logistf.profile.r
-975f3c75fc1f12d0a05a007e20236961 *R/pool.RR.r
 3f56581580cf50b4cbad902ee4f8c147 *R/print.logistf.R
 052e5ba3a80d83e38ab6b2fb42819354 *R/print.logistftest.R
 13ddf309e556d5ba1ea7a997b28930ed *R/profile.logistf.r
@@ -37,12 +36,12 @@ dccb3469068b78411028d6457c95bdb0 *man/logistf.control.Rd
 fffd5a5d696aaca6571dcfdc98c679c7 *man/logistftest.Rd
 2b8c9f89df2e0bc7a723a39756f032c8 *man/logistpl.control.rd
 d660774b7aa1d74dee2133aca601371c *man/plot.logistf.profile.Rd
-004ba2a8821b1de9e32ca63574804e70 *man/pool.RR.rd
 48043f5ac916e9be3405b14269857c14 *man/print.logistf.Rd
 cd65a9a68f278324b08af22568632be7 *man/print.logistftest.Rd
 bad11ac97692b75cf5d6c22334f03ca3 *man/profile.logistf.Rd
 4672f12e5e77aa2ab71a984b6b638d2a *man/sex2.Rd
 5466be1c16673a7a0fd5ebfe48d62f8a *man/summary.logistf.Rd
 453196f669bd0d27a7d8a6715a4c1983 *man/vcov.logistf.Rd
+feba8d88368fc31d29deb55b8e47d6c7 *src/init.c
 4047e420279dfda0abd48703e9b5185b *src/logistf.c
 3d203dce36618288fccb6d7701cad05f *src/veclib.h
