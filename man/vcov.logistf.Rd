@@ -26,5 +26,3 @@ data(sex2)
 fit<-logistf(case ~ age+oc+vic+vicl+vis+dia, data=sex2)
 vcov(fit)
 }
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

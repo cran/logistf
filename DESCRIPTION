@@ -1,5 +1,5 @@
 Package: logistf
-Version: 1.23
+Version: 1.23.1
 Date: 2018-07-19
 Title: Firth's Bias-Reduced Logistic Regression
 Authors@R: c(person("Georg", "Heinze", role=c("aut", "cre"), email="georg.heinze@meduniwien.ac.at"),
@@ -14,14 +14,14 @@ Description: Fit a logistic regression model using Firth's bias reduction method
 	maximum likelihood logistic regression is obtained.
 License: GPL
 URL:
-        http://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/fllogistf/
+        https://cemsiis.meduniwien.ac.at/en/kb/science-research/software/statistical-software/fllogistf/
 LazyLoad: yes
 NeedsCompilation: yes
-Packaged: 2018-07-19 15:57:04 UTC; Biometrikus
 Author: Georg Heinze [aut, cre],
   Meinhard Ploner [aut],
   Daniela Dunkler [ctb],
   Harry Southworth [ctb]
-Maintainer: Georg Heinze <georg.heinze@meduniwien.ac.at>
+Maintainer: ORPHANED
+Packaged: 2020-09-02 16:19:39 UTC; ripley
 Repository: CRAN
-Date/Publication: 2018-07-19 17:40:10 UTC
+Date/Publication: 2020-09-04 04:22:29 UTC

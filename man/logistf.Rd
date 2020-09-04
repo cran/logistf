@@ -8,7 +8,7 @@ Firth's Bias-Reduced Logistic Regression
 Implements Firth's bias-Reduced penalized-likelihood logistic regression.
 }
 \usage{
-logistf(formula = attr(data, "formula"), data = sys.parent(), pl = TRUE, 
+logistf(formula = attr(data, "formula"), data = parent.frame(), pl = TRUE, 
    alpha = 0.05, control, plcontrol, firth = TRUE, init, weights, 
    plconf = NULL, dataout = TRUE, ...)
 }

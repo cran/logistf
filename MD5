@@ -1,4 +1,4 @@
-cc605bdb8e1e30785a2add0de01a68af *DESCRIPTION
+6b385f89dfdb8feefb6cbec2a3b48706 *DESCRIPTION
 9f674e9f6330dcc0db081c14619067b3 *NAMESPACE
 b496de013aba65db5389cc452aee3fa8 *R/CLIP.confint.r
 05cc407443db6a0201979aff2a4e11e3 *R/CLIP.profile.r
@@ -7,7 +7,7 @@ b496de013aba65db5389cc452aee3fa8 *R/CLIP.confint.r
 10d1ab5a9f69ce7a2f91abefae9a8b81 *R/cholLinpack.R
 bedb14114eb968d8a97aa63870860406 *R/extractAIC.logistf.r
 9fd965b2fb0983eaf8a02a046f2539b7 *R/inverseLinpack.R
-547eeb1e349330138c8ade0b014f9955 *R/logistf.R
+459735e354ec730f9c8513d0a5f0e6d1 *R/logistf.R
 df501b46d1d1755d2b907f04bdc16e18 *R/logistf.control.R
 2f6a6072436b8404203e1b2eded82781 *R/logistf.fit.R
 ad33fed0e1120f2458bc41ec2ea81ceb *R/logistf.fit.old.R
@@ -25,13 +25,13 @@ e6709762aab99c147f3f8fbf20e9dd2d *R/summary.logistf.R
 2efe390df75864a2576292ab26709d24 *data/sexagg.txt.gz
 4c7902067ba1922ed889e878ad40c45c *man/CLIP.confint.Rd
 0e0f9ce0dee5632c1071e4f9cbf9c2a4 *man/CLIP.profile.Rd
-08f95929104365d9d84a27ff6a863494 *man/PVR.confint.Rd
+84487198f5a1ced05433dcac5146fe2e *man/PVR.confint.Rd
 b28d7ed2f591a797249b25731f9ea79f *man/add1.logistf.Rd
 2e6877607e3d357e476826d2624f93e3 *man/anova.logistf.Rd
 5823870fadfcb5df3cad7e9eea2edb96 *man/backward.Rd
 9d7ed87f6165e6257a8853860d49c268 *man/is.logistf.Rd
 02c91e28aa46b3d70df315c6e8bc603b *man/logistf-package.Rd
-47af2c7631d83d549c30461fcdb5e63c *man/logistf.Rd
+bf1d8d1306d71829ae094c038a459fb6 *man/logistf.Rd
 dccb3469068b78411028d6457c95bdb0 *man/logistf.control.Rd
 fffd5a5d696aaca6571dcfdc98c679c7 *man/logistftest.Rd
 2b8c9f89df2e0bc7a723a39756f032c8 *man/logistpl.control.rd
@@ -39,9 +39,9 @@ d660774b7aa1d74dee2133aca601371c *man/plot.logistf.profile.Rd
 48043f5ac916e9be3405b14269857c14 *man/print.logistf.Rd
 cd65a9a68f278324b08af22568632be7 *man/print.logistftest.Rd
 bad11ac97692b75cf5d6c22334f03ca3 *man/profile.logistf.Rd
-4672f12e5e77aa2ab71a984b6b638d2a *man/sex2.Rd
+a912c309c24693ccf0d2a31c5c0a4032 *man/sex2.Rd
 5466be1c16673a7a0fd5ebfe48d62f8a *man/summary.logistf.Rd
-453196f669bd0d27a7d8a6715a4c1983 *man/vcov.logistf.Rd
+2b2a63218c7f6712833d5cd93f4cea80 *man/vcov.logistf.Rd
 feba8d88368fc31d29deb55b8e47d6c7 *src/init.c
 4047e420279dfda0abd48703e9b5185b *src/logistf.c
 3d203dce36618288fccb6d7701cad05f *src/veclib.h

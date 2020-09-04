@@ -11,8 +11,9 @@
       vicl (use of lubricated condom), and vis (use of spermicide).
      }
      \usage{
-     sex2
-     sexagg}
+     data(sex2)
+     data(sexagg)
+     }
      \format{\code{sex2}: a \code{data.frame} containing 239 observations; \code{sexagg}: an aggregated \code{data.frame} containing 31 observations with case weights (\code{COUNT}).}
      \source{www.cytel.com, the full data was available for download at their webpage, and is distributed along with their LogXact software. Here a reduced version of the original data is reproduced.}
      \references{

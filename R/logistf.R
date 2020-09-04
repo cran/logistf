@@ -1,5 +1,5 @@
 logistf <-
-function(formula = attr(data, "formula"), data = sys.parent(), pl = TRUE, alpha = 0.05,
+function(formula = attr(data, "formula"), data = parent.frame(), pl = TRUE, alpha = 0.05,
     control, plcontrol, firth = TRUE, init, weights, plconf=NULL, dataout=TRUE, ...)
 {
     #n <- nrow(data)
