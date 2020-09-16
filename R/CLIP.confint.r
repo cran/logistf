@@ -1,17 +1,83 @@
-CLIP.confint <- function(
-  obj=NULL, 
-  variable=NULL, 
-  data, 
-  firth=TRUE, 
-  weightvar=NULL, 
-  control=logistf.control(), 
-  ci.level=c(0.025,0.975), 
-  pvalue=TRUE, 
-  offset=NULL, 
-  bound.lo=NULL, 
-  bound.up=NULL, 
-  legacy=FALSE
-) {
+#' Confidence Intervals after Multiple Imputation: Combination of Likelihood Profiles
+#' 
+#' This function implements the new combination of likelihood profiles (CLIP) method described in 
+#' Heinze, Ploner and Beyea (2013). This method is useful for computing confidence intervals for 
+#' parameters after multiple imputation of data sets, if the normality assumption on parameter estimates and consequently the validity of applying Rubin's rules (pooling of variances) is in doubt. It 
+#' consists of combining the profile likelihoods into a posterior. The function CLIP.confint searches 
+#' for those values of a regression coefficient, at which the cumulative distribution function of the 
+#' posterior is equal to the values specified in the argument ci.level (usually 0.025 and 0.975). The 
+#' search is performed using R's optimize function.
+#'
+#' For each confidence limit, this function performs a binary search to evaluate the combined posterior, 
+#' which is obtained by first transforming the imputed-data likelihood profiles into cumulative distribution functions (CDFs), and then averaging the CDFs to obtain the CDF of the posterior. Usually, 
+#' the binary search manages to find the confidence intervals very quickly. The number of iterations 
+#' (mean and maximum) will be supplied in the output object. Further details on the method can be 
+#' found in Heinze, Ploner and Beyea (2013).
+#'
+#' @param obj Either a list of logistf fits (on multiple imputed data sets), or the result of analysis of a \code{mice} (multiply imputed) object using \code{with.mids}
+#' @param variable The variable of interest, for which confidence intervals should be computed. If missing, confidence intervals for all variables will be computed.
+#' @param data A list of data set corresponding to the model fits. Can be left blank if obj was obtained with the \code{dataout=TRUE} option or if obj was obtained by mice
+#' @param firth If \code{TRUE}, applies the Firth correction. Should correspond to the entry in obj.
+#' @param weightvar An optional weighting variable for each observation. 
+#' @param control Control parameters for \code{logistf}, usually obtained by \code{logistf.control()}
+#' @param ci.level The two confidence levels for each tail of the posterior distribution.
+#' @param pvalue If \code{TRUE}, will also compute a P-value from the posterior.
+#' @param offset An optional offset variable
+#' @param bound.lo Bounds (vector of length 2) for the lower limit. Can be left blank. Use only if problems are encountered.
+#' @param bound.up Bounds (vector of length 2) for the upper limit. Can be left blank. Use only if problems are encountered.
+#' @param legacy If \code{TRUE}, will use pure R code for all model fitting. Can be slow. Not recommended.
+#'
+#' @return An object of class \code{CLIP.confint}, with items:
+#'    \item{variable}{The variable(s) which were analyzed}
+#'    \item{estimate}{The pooled estimate (average over imputations)}
+#'    \item{ci}{The confidence interval(s)}
+#'    \item{pvalue}{The p-value(s)}
+#'    \item{imputations}{The number of imputed datasets}
+#'    \item{ci.level}{The confidence level (input)}
+#'    \item{bound.lo}{The bounds used for finding the lower confidence limit; usually not of interest. May be useful for error-tracing.}
+#'    \item{bound.up}{The bounds used for finding the upper confidence limit}
+#'    \item{iter}{The number of iterations (for each variable and each tail)}
+#'    \item{call}{The call object}
+#' 
+#' @export CLIP.confint
+#'
+#' @examples
+#' #generate data set with NAs 
+#' freq=c(5,2,2,7,5,4)
+#' y<-c(rep(1,freq[1]+freq[2]), rep(0,freq[3]+freq[4]), rep(1,freq[5]), rep(0,freq[6]))
+#' x<-c(rep(1,freq[1]), rep(0,freq[2]), rep(1,freq[3]), rep(0,freq[4]), rep(NA,freq[5]),
+#' rep(NA,freq[6]))
+#' toy<-data.frame(x=x,y=y)
+#' 
+#' # impute data set 5 times
+#' set.seed(169)
+#' toymi<-list(0)
+#' for(i in 1:5){
+#'   toymi[[i]]<-toy
+#'   y1<-toymi[[i]]$y==1 & is.na(toymi[[i]]$x)
+#'   y0<-toymi[[i]]$y==0 & is.na(toymi[[i]]$x) 
+#'   xnew1<-rbinom(sum(y1),1,freq[1]/(freq[1]+freq[2]))
+#'   xnew0<-rbinom(sum(y0),1,freq[3]/(freq[3]+freq[4]))
+#'   toymi[[i]]$x[y1==TRUE]<-xnew1
+#'   toymi[[i]]$x[y0==TRUE]<-xnew0
+#'   }
+#'   
+#'   # logistf analyses of each imputed data set
+#'   fit.list<-lapply(1:5, function(X) logistf(data=toymi[[X]], y~x, pl=TRUE))
+#'   
+#'   # CLIP confidence limits
+#'   CLIP.confint(obj=fit.list, data = toymi)
+#' @author Georg Heinze and Meinhard Ploner
+#' @references Heinze G, Ploner M, Beyea J (2013). Confidence intervals after multiple imputation: combining 
+#' profile likelihood information from logistic regressions. Statistics in Medicine, to appear.
+#' 
+#' @seealso [logistf()] for Firth's bias-Reduced penalized-likelihood logistic regression.
+#' @encoding UTF-8
+#' 
+#' @rdname CLIP.confint
+CLIP.confint <- function(obj=NULL, variable=NULL, data, firth=TRUE, weightvar=NULL, 
+                         control=logistf.control(), ci.level=c(0.025,0.975), pvalue=TRUE, 
+                         offset=NULL, bound.lo=NULL, bound.up=NULL, legacy=FALSE) {
   which <- NULL
   if(length(ci.level)==1) ci.level<-c((1-ci.level)/2, 1-(1-ci.level)/2)
   
@@ -29,7 +95,7 @@ CLIP.confint <- function(
     else {
       # assuming as input a list of data sets (data) and a list of fits (obj)
       fits<-obj
-      if(missing(data)) if(is.null(fits[[1]]$data)) stop("Please provide data either as list of imputed data sets or by calling logistf on the imputed data sets with dataout=TRUE.\n")
+      if(missing(data)) if(is.null(fits[[1]]$data)) stop("Please provide data either as list of imputed data sets\n")
       else data<-lapply(1:length(fits), function(X) fits[[X]]$data)
       formula<-as.formula(fits[[1]]$call$formula)
       nimp<-length(data)
@@ -43,12 +109,10 @@ CLIP.confint <- function(
   if(is.null(variable))       variable<-names(fits[[1]]$coefficients)
   nvar<-length(variable)    
   
+  
   inner.CLIP<-function(myvar){
     variable<-myvar
     old<-legacy
-    
-    
-    
     
     imputations<-nimp
     if (is.null(which) & is.null(variable))
@@ -60,20 +124,19 @@ CLIP.confint <- function(
     variable.names<-colnames(model.matrix(formula, data = data[[1]]))
     #    mat.data<-matrix(lapply(1:imputations,function(x) matrix(unlist(data[[x]]),nperimp[[x]],ncol(data[[x]]))),sum(nperimp),ncol(data[[1]]))
     
-    
     imputation.indicator<-unlist(sapply(1:imputations, function(x) rep(x,nperimp[x]))[TRUE])       #[TRUE]makes vector out of matrix
     
-    mat.data<-matrix(0,sum(nperimp),ncol(data[[1]]))   ### copy list of data set into a matrix
-    for(i in 1:imputations) mat.data[imputation.indicator==i,1:ncol(data[[i]])]<-as.matrix(data[[i]])
-    
+    #mat.data<-matrix(0,sum(nperimp),ncol(data[[1]]))   ### copy list of data set into a matrix
+    #for(i in 1:imputations) mat.data[imputation.indicator==i,1:ncol(data[[i]])]<-as.matrix(data[[i]])
+    #easier as above (and without converting everything to strings):
+    mat.data <- do.call(rbind, data)
     
     #  if(missing(weightvar)) {
     #     weightvar<-"weights"
     #     mat.data[,ncol(mat.data)]<-rep(1,nrow(mat.data))
     #   }
-    big.data<-data.frame(mat.data)
+    big.data<-data.frame(mat.data, stringsAsFactors = F)
     colnames(big.data)<-colnames(data[[1]])
-    
     
     k<-length(variable.names)  
     xyw<-matrix(0,sum(nperimp),k+2)
@@ -97,7 +160,6 @@ CLIP.confint <- function(
     #    covs <- fit$var
     #    n <- nrow(x)
     #    cov.name <- labels(x)[[2]]
-    
     if (is.null(weightvar)) {
       # data<-lapply(1:imputations, function(z) {
       #  data[[z]]$weightvar<-rep(1,nrow(data[[z]]))
@@ -108,12 +170,11 @@ CLIP.confint <- function(
     }
     else xyw[,k+2]<-big.data[,weightvar]
     posweight<-k+2
-    
-    
+
     lf<-function(index) logistf.fit(y=xyw[index,k+1], x=xyw[index,1:k], weight=xyw[index,k+2])
-    
+
     if (is.null(fits))   fits<-lapply(1:imputations, function(z) lf(imputation.indicator==z))
-    
+
     if(is.null(bound.lo)){
       lower.collect<-        (unlist(lapply(1:imputations,function(x) fits[[x]]$ci.lower[pos])))
       lowerbound.lo<-min(lower.collect) ###von dem den index nehmen und davon das PL CI ausrechnen
@@ -142,7 +203,6 @@ CLIP.confint <- function(
       upperbound.up <- upperbound.up + 1/2
     }
     
-    
     estimate<-mean(unlist(lapply(1:imputations,function(x) fits[[x]]$coefficients[pos])))
     
     iter<-numeric(0)
@@ -150,17 +210,18 @@ CLIP.confint <- function(
     loglik<-unlist(lapply(1:imputations, function(x) fits[[x]]$loglik[2]))
     beta<-t(matrix(unlist(lapply(1:imputations,function(x) fits[[x]]$coefficients)),k,imputations))
     
-    
+
     lpdf<-function(zz,z) logistf.pdf(x=xyw[imputation.indicator==zz,1:k], y=xyw[imputation.indicator==zz,k+1], 
                                      weight=xyw[imputation.indicator==zz,k+2], beta=beta[zz,],loglik=loglik[zz],
                                      pos=pos, firth=firth, offset=offset, control=control, b=z, old=old)$pdf
     
-    f=function(z)  mean(unlist(lapply(1:imputations, function(zz) lpdf(zz,z))))
-    
+    f=function(z)  mean(unlist(lapply(1:imputations, function(zz) {lpdf(zz,z)}
+    )))
     f.lower<-f(lowerbound.lo)-ci.level[1]
     f.upper<-f(upperbound.lo)-ci.level[1]
     iter[1]<-2
     itwhile<-0
+
     while(f.lower > 0 & (upperbound.lo - lowerbound.lo) > 0 & itwhile<5) {
       itwhile<-itwhile+1
       lowerbound.lo<-lowerbound.lo - (upperbound.lo - lowerbound.lo)/2
@@ -177,16 +238,16 @@ CLIP.confint <- function(
       f.upper<-f(upperbound.lo)-ci.level[1]
       iter[1]<-iter[1]+1
     }
+
     if (itwhile>=5 & f.upper<0) stop("pool.pl can not find an upper boundary for the lower confidence limit.\n Try to increase number of imputations or supply boundaries by bound.lo=c(x,xx).\n")
     
     ci<-numeric(0)
+
     res.ci<-uniroot(f=function(z) {f(z)-ci.level[1]}, 
                     lower=lowerbound.lo, upper=upperbound.lo, f.lower=f.lower, f.upper=f.upper)
     ci[1]<-res.ci$root
     iter[1]<-res.ci$iter+iter[1]
-    
-    
-    
+
     f.lower<-f(lowerbound.up)-ci.level[2]
     f.upper<-f(upperbound.up)-ci.level[2]
     iter[2]<-2
@@ -237,7 +298,7 @@ CLIP.confint <- function(
       bound.up=c(lowerbound.up, upperbound.up), iter=iter)
     return(res)
   }
-  
+
   estimate<-numeric(nvar)
   ci<-matrix(0,nvar,2)
   pvalue.out<-numeric(nvar)
@@ -263,6 +324,9 @@ CLIP.confint <- function(
   return(res)
 }
 
+
+
+#' @method print CLIP.confint
 print.CLIP.confint <- function(
   x,
   exp=FALSE, 

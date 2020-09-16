@@ -115,8 +115,10 @@ void XtXasy(double *X, double *res, long k, long m)
 void trans(double *X, double *res, long k, long m)
 {
 	for(long i=0; i < k; i++)
-		for(long j=0; j < m; j++) 
+		for(long j=0; j < m; j++) {
 			res[i*m + j] = X[i + j*k];
+		  //Rprintf("trans: %f", res[i*m + j]);
+		}
 }
 
 
@@ -125,8 +127,7 @@ void linpack_inv_det(double *A_doub, long *size, double *logdet)
 {
   int i, j , c1, c2, ok, N, n;
   double *A, *det;
-  
-  n = (long) *size;                        // type-cast                                                                               
+  n = (long) *size;                        // type-cast  
   N = n * n; 
   if (NULL == (A = (double *) R_alloc(N, sizeof(double))))
   {

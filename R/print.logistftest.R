@@ -1,3 +1,4 @@
+#' @exportS3Method print logistftest
 print.logistftest <-
 function(x, ...){
 # x ... object of class logistftest
