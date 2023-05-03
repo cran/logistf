@@ -1,3 +1,9 @@
+# logistf 1.25.0
+
+* Fixed memory bug with large data sets in `flic()` (#45).
+* Added support for `emmeans`: `emmeans::emmeans()` now works with `logistf` objects (#51).
+
+
 # logistf 1.24.1
 
 * Added a `NEWS.md` file to track changes to the package.
