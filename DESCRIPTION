@@ -1,6 +1,6 @@
 Package: logistf
-Version: 1.25.0
-Date: 2023-04-25
+Version: 1.26.0
+Date: 2023-08-18
 Title: Firth's Bias-Reduced Logistic Regression
 Authors@R: c(person("Georg", "Heinze", role=c("aut", "cre"), email="georg.heinze@meduniwien.ac.at"),
 			 person("Meinhard", "Ploner", role=c("aut")),
@@ -24,7 +24,7 @@ NeedsCompilation: yes
 RoxygenNote: 7.2.2
 LazyData: true
 BugReports: https://github.com/georgheinze/logistf/issues/
-Packaged: 2023-04-25 12:33:10 UTC; Gregor
+Packaged: 2023-08-18 08:05:42 UTC; Gregor
 Author: Georg Heinze [aut, cre],
   Meinhard Ploner [aut],
   Daniela Dunkler [ctb],
@@ -33,4 +33,4 @@ Author: Georg Heinze [aut, cre],
   Gregor Steiner [aut]
 Maintainer: Georg Heinze <georg.heinze@meduniwien.ac.at>
 Repository: CRAN
-Date/Publication: 2023-05-03 07:30:02 UTC
+Date/Publication: 2023-08-18 09:52:33 UTC
