@@ -17,7 +17,7 @@ sex2: a data.frame containing 239 observations
 }
 }
 \source{
-\url{https://www.cytel.com/}
+\url{https://cytel.com/}
 }
 \usage{
 sex2

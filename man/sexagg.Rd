@@ -17,7 +17,7 @@ sexagg: an aggregated data.frame containing 31 observations with case weights (C
 }
 }
 \source{
-\url{https://www.cytel.com/}
+\url{https://cytel.com/}
 }
 \usage{
 sexagg
